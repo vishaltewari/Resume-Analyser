@@ -1,40 +1,117 @@
-# Welcome to React Router!
+# 📋 Application Tracker
 
-A modern, production-ready template for building full-stack React applications using React Router.
+A modern AI-powered resume analysis and job application tracking system built with React, TypeScript, and Puter Cloud Services.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+## ✨ Features
 
-## Features
+- 🤖 **AI-Powered Resume Analysis** - Get intelligent feedback and ATS scores for your resumes
+- 📄 **PDF Processing** - Upload and convert PDF resumes to images using PDF.js
+- 🎯 **Job Application Tracking** - Keep track of all your job applications in one place
+- 📊 **Performance Metrics** - Visual scoring system with dynamic badges and progress indicators
+- 🔐 **Secure Cloud Storage** - Integration with Puter cloud services for file storage and data persistence
+- � **Responsive Design** - Works seamlessly across desktop and mobile devices
+- ⚡ **Real-time Updates** - Live status updates during resume processing
+- 🎨 **Modern UI** - Clean, intuitive interface with smooth animations
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+## � Tech Stack
 
-## Getting Started
+- **Frontend**: React 18, TypeScript, React Router
+- **Styling**: TailwindCSS with custom animations
+- **File Processing**: PDF.js for PDF to image conversion
+- **Cloud Services**: Puter (File storage, AI analysis, Key-value store)
+- **Build Tool**: Vite with Hot Module Replacement
+- **State Management**: React hooks with custom stores
+
+## 📦 Getting Started
+
+### Prerequisites
+
+- Node.js (v20.19.0 or higher)
+- npm (v10.9.0 or higher)
 
 ### Installation
 
-Install the dependencies:
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/vishaltewari/application_analyser.git
+   cd application_analyser
+   ```
 
-```bash
-npm install
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Set up environment variables**
+   Create a `.env.local` file in the root directory:
+   ```bash
+   # Add your Puter API credentials
+   PUTER_API_KEY=your_puter_api_key_here
+   ```
+
+4. **Start the development server**
+   ```bash
+   npm run dev
+   ```
+
+Your application will be available at `http://localhost:5173`
+
+## 🎯 Usage
+
+### 1. Upload Resume
+- Navigate to the upload page
+- Fill in job details (Company Name, Job Title, Job Description)
+- Drag and drop or click to upload your PDF resume
+- Click "Analyze Resume" to start processing
+
+### 2. View Analysis
+- Watch real-time progress updates during processing
+- Get redirected to the review page upon completion
+- View your resume image alongside detailed AI feedback
+- See your ATS score with color-coded badges
+
+### 3. Track Applications
+- Browse all your submitted applications on the home page
+- Click on any resume card to view detailed analysis
+- Monitor your application performance over time
+
+## 🏗️ Project Structure
+
+```
+app/
+├── components/          # Reusable React components
+│   ├── FileUploader.tsx    # Drag-and-drop file upload
+│   ├── Navbar.tsx          # Navigation component
+│   ├── ResumeCard.tsx      # Resume display card
+│   ├── ScoreCircle.tsx     # Circular score indicator
+│   └── ScoreBadge.tsx      # Score badge with dynamic styling
+├── routes/              # Page components
+│   ├── home.tsx            # Main dashboard
+│   ├── upload.tsx          # Resume upload page
+│   └── resume.tsx          # Resume review page
+├── lib/                 # Utility functions
+│   ├── pdf2img.ts          # PDF to image conversion
+│   ├── puter.ts            # Puter cloud integration
+│   └── util.ts             # General utilities
+├── constants/           # App constants and configurations
+└── types/              # TypeScript type definitions
 ```
 
-### Development
+## 🔧 Key Components
 
-Start the development server with HMR:
+### FileUploader
+Drag-and-drop interface for PDF resume uploads with visual feedback.
 
-```bash
-npm run dev
-```
+### ScoreBadge
+Dynamic scoring component with color-coded badges:
+- **Green** (70+): Strong
+- **Yellow** (50-70): Good Start  
+- **Red** (<50): Needs Work
 
-Your application will be available at `http://localhost:5173`.
+### PDF Processing
+Converts uploaded PDF resumes to images for AI analysis and display.
 
-## Building for Production
+## 🚀 Building for Production
 
 Create a production build:
 
@@ -42,46 +119,49 @@ Create a production build:
 npm run build
 ```
 
-## Deployment
-
-### Docker Deployment
-
-To build and run using Docker:
+Preview the production build:
 
 ```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
+npm run preview
 ```
 
-The containerized application can be deployed to any platform that supports Docker, including:
+## 🌐 Deployment
 
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
+### Vercel (Recommended)
+
+1. **Connect your repository to Vercel**
+2. **Add environment variables**:
+   - `PUTER_API_KEY`: Your Puter API key
+3. **Deploy automatically on push to main branch**
+
+### Other Platforms
+
+The application can be deployed to any platform supporting Node.js applications:
+- Netlify
+- Railway  
+- Heroku
+- AWS Amplify
 - Digital Ocean App Platform
-- Fly.io
-- Railway
 
-### DIY Deployment
+## 🤝 Contributing
 
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-Make sure to deploy the output of `npm run build`
+## 📝 License
 
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Styling
+## 🙏 Acknowledgments
 
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
+- Built with [React Router](https://reactrouter.com/)
+- Powered by [Puter Cloud Services](https://puter.com/)
+- PDF processing by [PDF.js](https://mozilla.github.io/pdf.js/)
+- Styled with [TailwindCSS](https://tailwindcss.com/)
 
 ---
 
-Built with ❤️ using React Router.
+**Made with ❤️ by [Vishal Tewari](https://github.com/vishaltewari)**
